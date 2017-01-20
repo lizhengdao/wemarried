@@ -1,0 +1,258 @@
+@charset "utf-8";
+/*css reset*/
+body, div, p, img, ul, li,h2 {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-image: url("../images/bg.svg");
+
+    font-size: 1.4rem;
+
+}
+
+/*常用类*/
+.clear-fix {
+    zoom: 1;
+}
+
+.clear-fix:before, .clear-fix:after {
+    height: 0;
+    width: 0;
+    content: "";
+    display: table;
+
+}
+
+.clear-fix:after {
+    clear: both;
+}
+
+.container {
+    margin: 5rem auto;
+    height: 65rem;
+    width: 80rem;
+
+}
+
+/*pone-panel*/
+
+.show-panel, .share {
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.show-panel {
+    /*background-color: gray;*/
+}
+
+.pone {
+    width: 32rem;
+    height: 100%;
+
+    position: relative;
+}
+
+.shell-top, .shell-bottom {
+    width: 100%;
+    height: 4.6rem;
+    position: absolute;
+
+}
+
+.shell-top {
+    top: 0;
+    background: url("../images/phonetop.svg") no-repeat;
+}
+
+.shell-bottom {
+    bottom: 0;
+    background: url("../images/phonefoot.svg") no-repeat;
+}
+
+.main {
+    box-sizing: border-box;
+    width: 100%;
+    position: absolute;
+    top: 4.6rem;
+    height: calc(100% - 4.6 * 2rem);
+    border: 1px solid white;
+}
+
+/*prev next button*/
+.prev, .next {
+    display: inline-block;
+    height: 6rem;
+    width: 2rem;
+    background: #08A1EF;
+    color: white;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    position: absolute;
+    right: -3.8rem;
+    text-align: center;
+    text-decoration: none;
+    padding: 2rem 0.9rem;
+
+}
+
+.prev:hover, .next:hover {
+    background: white;
+    color: #08A1EF;
+}
+
+.prev {
+    top: 10rem;
+}
+
+.next {
+    top: 24rem;
+}
+
+/*radio-btn*/
+.radio-btn {
+    background: url("../images/normalmusic.svg") center;
+    height: 6rem;
+    width: 6rem;
+    position: absolute;
+    top: 8rem;
+    right: 2.3rem;
+}
+/*bar*/
+.pone-status-bar{
+    width: 100%;
+    height: 2rem;
+    background: url("../images/phonetime.svg") center;
+}
+.pone-title-bar{
+    width: 100%;
+    height: 4rem;
+    background: black;
+    color: white;
+    text-align: center;
+    line-height: 4rem;
+    font-weight: normal;
+    font-family: sans-serif;
+}
+
+/*share*/
+.share {
+    text-align: center;
+}
+
+.share-con {
+    height: 36rem;
+    width: 23rem;
+    margin: 10rem auto;
+    padding: 1rem 0;
+}
+
+.share p {
+
+    margin: 1.5rem 0;
+}
+
+.share p > a {
+    margin-left: 2rem;
+    padding: 5px 8px;
+    background: #08A1EF;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+.share p > a:hover {
+    background: rgb(46, 206, 255);
+}
+
+.share img {
+    border: 1rem solid white;
+}
+
+.share ul {
+    list-style-type: none;
+    text-align: center;
+    width: 70%;
+    margin: 1rem auto;
+}
+
+.share li {
+    float: left;
+    padding:0 1rem;
+}
+
+.share ul a {
+    display: inline-block;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    line-height: 3rem;
+    text-align: center;
+
+}
+
+.share ul span {
+    display: inline-block;
+    width: 1.8rem;
+    height: 1.8rem;
+    margin-top: 0.5rem;
+
+}
+
+.sh-qq a {
+    background-color: #08A1EF;
+}
+
+.sh-zone a {
+    background-color: #F2A653;
+}
+
+.sh-weibo a {
+    background-color: #FF5448;
+}
+
+.sh-qq span {
+    background: url("../images/share-sprite.png") 0 0;
+}
+
+.sh-zone span {
+    background: url("../images/share-sprite.png") -2rem 0;
+}
+
+.sh-weibo span {
+    background: url("../images/share-sprite.png") -4rem 0;
+}
+
+.to-do {
+    border: 1px solid white;
+    padding: 1.5rem 0;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    color: white;
+}
+
+.to-do a {
+    color: #08A1EF;
+}
+
+.to-do a:hover {
+    color: rgb(46, 206, 255);
+}
+
+/*support*/
+.support {
+    color: white;
+    vertical-align: middle;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    margin: 15px auto;
+
+}
