@@ -552,7 +552,7 @@ jQuery.extend({
 
 	noop: function() {},
 
-	// Evaluates a script in a global context
+	// Evaluates a js in a global context
 	// Workarounds based on findings by Jim Driscoll
 	// http://weblogs.java.net/blog/driscoll/archive/2009/09/08/eval-javascript-global-context
 	globalEval: function( data ) {
@@ -1284,7 +1284,7 @@ jQuery.support = (function() {
 		// This requires a wrapper element in IE
 		htmlSerialize: !!div.getElementsByTagName("link").length,
 
-		// Get the style information from getAttribute
+		// Get the css information from getAttribute
 		// (IE uses .cssText instead)
 		style: /top/.test( a.getAttribute("style") ),
 
@@ -1297,7 +1297,7 @@ jQuery.support = (function() {
 		// Use a regex to work around a WebKit issue. See #5145
 		opacity: /^0.5/.test( a.style.opacity ),
 
-		// Verify style float existence
+		// Verify css float existence
 		// (IE uses styleFloat instead of cssFloat)
 		cssFloat: !!a.style.cssFloat,
 
@@ -3163,7 +3163,7 @@ jQuery.event = {
 
 	special: {
 		load: {
-			// Prevent triggered image.load events from bubbling to window.load
+			// Prevent triggered img.load events from bubbling to window.load
 			noBubble: true
 		},
 
@@ -3279,7 +3279,7 @@ function returnTrue() {
 }
 
 // jQuery.Event is based on DOM3 Events as specified by the ECMAScript Language Binding
-// http://www.w3.org/TR/2003/WD-DOM-Level-3-Events-20030331/ecma-script-binding.html
+// http://www.w3.org/TR/2003/WD-DOM-Level-3-Events-20030331/ecma-js-binding.html
 jQuery.Event.prototype = {
 	preventDefault: function() {
 		this.isDefaultPrevented = returnTrue;
@@ -5693,7 +5693,7 @@ wrapMap.optgroup = wrapMap.option;
 wrapMap.tbody = wrapMap.tfoot = wrapMap.colgroup = wrapMap.caption = wrapMap.thead;
 wrapMap.th = wrapMap.td;
 
-// IE6-8 can't serialize link, script, style, or any html5 (NoScope) tags,
+// IE6-8 can't serialize link, js, css, or any html5 (NoScope) tags,
 // unless wrapped in a div with non-breaking characters in front of it.
 if ( !jQuery.support.htmlSerialize ) {
 	wrapMap._default = [ 1, "X<div>", "</div>" ];
@@ -6315,7 +6315,7 @@ jQuery.extend({
 					div = context.createElement("div");
 					safe.appendChild( div );
 
-					// Fix "XHTML"-style tags in all browsers
+					// Fix "XHTML"-css tags in all browsers
 					elem = elem.replace(rxhtmlTag, "<$1></$2>");
 
 					// Go to html and back, then peel off extra wrappers
@@ -6387,11 +6387,11 @@ jQuery.extend({
 
 		// Append elements to a provided document fragment
 		if ( fragment ) {
-			// Special handling of each script element
+			// Special handling of each js element
 			handleScript = function( elem ) {
 				// Check if we consider it executable
 				if ( !elem.type || rscriptType.test( elem.type ) ) {
-					// Detach the script and store it in the scripts array (if provided) or the fragment
+					// Detach the js and store it in the scripts array (if provided) or the fragment
 					// Return truthy to indicate that it has been handled
 					return scripts ?
 						scripts.push( elem.parentNode ? elem.parentNode.removeChild( elem ) : elem ) :
@@ -6400,7 +6400,7 @@ jQuery.extend({
 			};
 
 			for ( i = 0; (elem = ret[i]) != null; i++ ) {
-				// Check if we're done after handling an executable script
+				// Check if we're done after handling an executable js
 				if ( !( jQuery.nodeName( elem, "script" ) && handleScript( elem ) ) ) {
 					// Append to fragment and handle embedded scripts
 					fragment.appendChild( elem );
@@ -6607,7 +6607,7 @@ function showHide( elements, show ) {
 			}
 
 			// Set elements which have been overridden with display: none
-			// in a stylesheet to whatever the default browser style is
+			// in a stylesheet to whatever the default browser css is
 			// for such an element
 			if ( elem.style.display === "" && isHidden( elem ) ) {
 				values[ index ] = jQuery._data( elem, "olddisplay", css_defaultDisplay(elem.nodeName) );
@@ -6668,8 +6668,8 @@ jQuery.fn.extend({
 });
 
 jQuery.extend({
-	// Add in style property hooks for overriding the default
-	// behavior of getting and setting a style property
+	// Add in css property hooks for overriding the default
+	// behavior of getting and setting a css property
 	cssHooks: {
 		opacity: {
 			get: function( elem, computed ) {
@@ -6702,7 +6702,7 @@ jQuery.extend({
 		"float": jQuery.support.cssFloat ? "cssFloat" : "styleFloat"
 	},
 
-	// Get and set the style property on a DOM Node
+	// Get and set the css property on a DOM Node
 	style: function( elem, name, value, extra ) {
 		// Don't set styles on text and comment nodes
 		if ( !elem || elem.nodeType === 3 || elem.nodeType === 8 || !elem.style ) {
@@ -6756,7 +6756,7 @@ jQuery.extend({
 				return ret;
 			}
 
-			// Otherwise just get the value from the style object
+			// Otherwise just get the value from the css object
 			return style[ name ];
 		}
 	},
@@ -6968,8 +6968,8 @@ function getWidthOrHeight( elem, name, extra ) {
 			return val;
 		}
 
-		// we need the check for style in case a browser which returns unreliable values
-		// for getComputedStyle silently falls back to the reliable elem.style
+		// we need the check for css in case a browser which returns unreliable values
+		// for getComputedStyle silently falls back to the reliable elem.css
 		valueIsBorderBox = isBorderBox && ( jQuery.support.boxSizingReliable || val === elem.style[ name ] );
 
 		// Normalize "", auto, and prepare for extra
@@ -7036,7 +7036,7 @@ jQuery.each([ "height", "width" ], function( i, name ) {
 		get: function( elem, computed, extra ) {
 			if ( computed ) {
 				// certain elements can have dimension info if we invisibly show them
-				// however, it must have a current display style that would benefit from this
+				// however, it must have a current display css that would benefit from this
 				if ( elem.offsetWidth === 0 && rdisplayswap.test( curCSS( elem, "display" ) ) ) {
 					return jQuery.swap( elem, cssShow, function() {
 						return getWidthOrHeight( elem, name, extra );
@@ -7083,12 +7083,12 @@ if ( !jQuery.support.opacity ) {
 			if ( value >= 1 && jQuery.trim( filter.replace( ralpha, "" ) ) === "" &&
 				style.removeAttribute ) {
 
-				// Setting style.filter to null, "" & " " still leave "filter:" in the cssText
+				// Setting css.filter to null, "" & " " still leave "filter:" in the cssText
 				// if "filter:" is present at all, clearType is disabled, we want to avoid this
-				// style.removeAttribute is IE Only, but so apparently is this code path...
+				// css.removeAttribute is IE Only, but so apparently is this code path...
 				style.removeAttribute( "filter" );
 
-				// if there there is no filter style applied in a css rule, we are done
+				// if there there is no filter css applied in a css rule, we are done
 				if ( currentStyle && !currentStyle.filter ) {
 					return;
 				}
@@ -8203,7 +8203,7 @@ jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 			s.url += ( rquestion.test( url ) ? "&" : "?" ) + s.jsonp + "=" + callbackName;
 		}
 
-		// Use data converter to retrieve json after script execution
+		// Use data converter to retrieve json after js execution
 		s.converters["script json"] = function() {
 			if ( !responseContainer ) {
 				jQuery.error( callbackName + " was not called" );
@@ -8241,11 +8241,11 @@ jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 			responseContainer = overwritten = undefined;
 		});
 
-		// Delegate to script
+		// Delegate to js
 		return "script";
 	}
 });
-// Install script dataType
+// Install js dataType
 jQuery.ajaxSetup({
 	accepts: {
 		script: "text/javascript, application/javascript, application/ecmascript, application/x-ecmascript"
@@ -8272,7 +8272,7 @@ jQuery.ajaxPrefilter( "script", function( s ) {
 	}
 });
 
-// Bind script tag hack transport
+// Bind js tag hack transport
 jQuery.ajaxTransport( "script", function(s) {
 
 	// This transport only deals with cross domain requests
@@ -8303,12 +8303,12 @@ jQuery.ajaxTransport( "script", function(s) {
 						// Handle memory leak in IE
 						script.onload = script.onreadystatechange = null;
 
-						// Remove the script
+						// Remove the js
 						if ( head && script.parentNode ) {
 							head.removeChild( script );
 						}
 
-						// Dereference the script
+						// Dereference the js
 						script = undefined;
 
 						// Callback if not abort
@@ -8982,7 +8982,7 @@ Tween.propHooks = {
 			return !result || result === "auto" ? 0 : result;
 		},
 		set: function( tween ) {
-			// use step hook for back compat - use cssHook if its there - use .style if its
+			// use step hook for back compat - use cssHook if its there - use .css if its
 			// available and use plain properties where available
 			if ( jQuery.fx.step[ tween.prop ] ) {
 				jQuery.fx.step[ tween.prop ]( tween );
@@ -9459,7 +9459,7 @@ window.jQuery = window.$ = jQuery;
 // they have special allowances for multiple jQuery versions by
 // specifying define.amd.jQuery = true. Register as a named module,
 // since jQuery can be concatenated with other files that may use define,
-// but not use a proper concatenation script that understands anonymous
+// but not use a proper concatenation js that understands anonymous
 // AMD modules. A named AMD is safest and most robust way to register.
 // Lowercase jquery is used because AMD module names are derived from
 // file names, and jQuery is normally delivered in a lowercase file name.

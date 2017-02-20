@@ -1,0 +1,511 @@
+@charset "utf-8";
+/*css reset*/
+body, div, p, img, ul, li, h2, h3, a {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background: url("../img/bg.svg") center no-repeat fixed;
+    font-size: 1.4rem;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    zoom: 1;
+}
+
+/*常用类*/
+.clear-fix {
+    zoom: 1;
+}
+
+.clear-fix:before, .clear-fix:after {
+    height: 0;
+    width: 0;
+    content: "";
+    display: table;
+
+}
+
+.clear-fix:after {
+    clear: both;
+}
+
+.container {
+    margin: 50px auto;
+    height: 650px;
+    width: 800px;
+
+}
+
+/*pone-panel*/
+
+.show-panel, .share {
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.show-panel {
+    /*background-color: gray;*/
+}
+
+.pone {
+    width: 320px;
+    height: 100%;
+    position: relative;
+}
+
+.shell-top, .shell-bottom {
+    width: 100%;
+    height: 46px;
+    position: absolute;
+
+}
+
+.shell-top {
+    top: 0;
+    background: url("../img/phonetop.svg") no-repeat;
+}
+
+.shell-bottom {
+    bottom: 0;
+    background: url("../img/phonefoot.svg") no-repeat;
+}
+
+.main {
+    box-sizing: border-box;
+    width: 100%;
+    position: absolute;
+    top: 46px;
+    height: calc(100% - 4.6 * 20px);
+
+    border: 1px solid white;
+
+}
+
+/*prev next button*/
+.prev, .next {
+    display: inline-block;
+    height: 60px;
+    width: 20px;
+    background: #08A1EF;
+    color: white;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    position: absolute;
+    right: -40px;
+    text-align: center;
+    text-decoration: none;
+    padding: 20px 9px;
+    border: 1px solid #08A1EF;
+}
+
+.prev:hover, .next:hover {
+    background: white;
+    color: #08A1EF;
+}
+
+.prev {
+    top: 100px;
+}
+
+.next {
+    top: 240px;
+}
+
+/*radio-btn*/
+.radio-btn {
+    background: url("../img/normalmusic.svg") center;
+    height: 3rem;
+    width: 3rem;
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    background-size: cover;
+    -webkit-background-size: cover; /* 兼容Webkit内核浏览器如Chrome和Safari */
+    -o-background-size: cover; /* 兼容Opera */
+    -moz-background-size: cover; /* 兼容Opera */
+    -ms-background-size: cover; /* 兼容Opera */
+    z-index: 1000;
+}
+
+/*bar*/
+.pone-status-bar {
+    width: 100%;
+    height: 20px;
+    background: url("../img/phonetime.svg") center;
+}
+
+.pone-title-bar {
+    width: 100%;
+    height: 40px;
+    background: black;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    font-weight: normal;
+    font-family: sans-serif;
+}
+
+/*play-viewport*/
+.play-viewport {
+    height: 90%;
+    width: 100%;
+    background: white;
+    position: relative;
+
+}
+
+.user-p, .page {
+    height: 100%;
+    width: 100%;
+}
+
+/*.page-home*/
+.page-home {
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    background: url("../img/page-home-bg.jpg") no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover; /* 兼容Webkit内核浏览器如Chrome和Safari */
+    -o-background-size: cover; /* 兼容Opera */
+    -moz-background-size: cover; /* 兼容Opera */
+    -ms-background-size: cover; /* 兼容Opera */
+}
+
+.page-home h3 {
+    color: white;
+    margin-top: 80px;
+}
+
+.page-home .line {
+
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 30px;
+}
+
+.page-home img {
+    height: 150px;
+    width: 150px;
+    border-radius: 10px;
+
+}
+
+.report-download {
+    position: absolute;
+    left: 20px;
+    bottom: 30px;
+    color: #676767;
+
+}
+
+.report, .download {
+    text-decoration: none;
+}
+
+.report {
+    margin-right: 40px;
+    color: #888;
+
+}
+
+.download {
+    color: #2e8fc0;
+}
+
+/*swiper*/
+
+.swiper-container, .swiper-wrapper.swiper-slide {
+    width: 100%;
+    height: 500px;
+}
+
+.swiper-container {
+    position: relative;
+}
+
+.swiper-pagination {
+    background: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    bottom: 0;
+    height: 4px;
+}
+
+
+
+.swiper-slide {
+    background-size: cover;
+    -webkit-background-size: cover; /* 兼容Webkit内核浏览器如Chrome和Safari */
+    -o-background-size: cover; /* 兼容Opera */
+    -moz-background-size: cover; /* 兼容Opera */
+    -ms-background-size: cover; /* 兼容Opera */
+    /*background-size: 320px 600px;*/
+}
+
+.page-7 {
+    background: url("../img/user-1.jpg") center no-repeat;
+}
+
+.page-2 {
+    background: url("../img/user-2.jpg") center no-repeat;
+}
+
+.page-3 {
+    background: url("../img/user-3.jpg") center no-repeat;
+}
+
+.page-4 {
+    background: url("../img/user-4.jpg") center no-repeat;
+}
+
+.page-5 {
+    background: url("../img/user-5.jpg") center no-repeat;
+}
+
+/*share*/
+.share {
+    text-align: center;
+    position: relative;
+}
+
+.share-con {
+    height: 360px;
+    width: 230px;
+    margin: 100px auto;
+    padding: 10px 0;
+    position: absolute;
+    right: 0;
+
+}
+
+.share p {
+
+    margin: 15px 0;
+}
+
+.share p > a {
+    margin-left: 20px;
+    padding: 5px 8px;
+    background: #08A1EF;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+.share p > a:hover {
+    background: rgb(46, 206, 255);
+}
+
+.share img {
+    border: 10px solid white;
+}
+
+.share ul {
+    list-style-type: none;
+    text-align: center;
+    width: 70%;
+    margin: 10px auto;
+}
+
+.share li {
+    float: left;
+    padding: 0 10px;
+}
+
+.share ul a {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    line-height: 30px;
+    text-align: center;
+
+}
+
+.share ul span {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-top: 5px;
+
+}
+
+.sh-qq a {
+    background-color: #08A1EF;
+}
+
+.sh-zone a {
+    background-color: #F2A653;
+}
+
+.sh-weibo a {
+    background-color: #FF5448;
+}
+
+.sh-qq span {
+    background: url("../img/css-sprites.png") 0 0;
+}
+
+.sh-zone span {
+    background: url("../img/css-sprites.png") -20px 0;
+}
+
+.sh-weibo span {
+    background: url("../img/css-sprites.png") -40px 0;
+}
+
+.to-do {
+    border: 1px solid white;
+    padding: 15px 0;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    color: white;
+}
+
+.to-do a {
+    color: #08A1EF;
+}
+
+.to-do a:hover {
+    color: rgb(46, 206, 255);
+}
+
+/*support*/
+.support {
+    color: white;
+    vertical-align: middle;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    margin: 15px auto;
+
+}
+
+/*pointer*/
+.pointer {
+    position: absolute;
+    height: 38px;
+    bottom: 20px;
+    width: 100%;
+    z-index: 10000;
+}
+
+.pointer p {
+    animation: anima-pointer 2s infinite;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -14px;
+    height: 28px;
+    width: 28px;
+    background: url("../img/css-sprites.png") -63px 0;
+}
+
+/*animation*/
+@keyframes anima-pointer {
+    0% {
+        opacity: 0;
+        bottom: 0
+    }
+    100% {
+        opacity: 1;
+        bottom: 10px;
+    }
+}
+
+/*page-tips*/
+.page-tips {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    /*z-index: 100;*/
+
+}
+
+.page-tips span {
+    display: flex;
+    flex: 1;
+    height: 100%;
+    background: #08A1EF;
+}
+
+.page-tips em {
+    position: absolute;
+    top: -12px;
+    height: 5px;
+    font-style: normal;
+    right: 5px;
+    font-size: 12px;
+    color: #fff;
+}
+
+@media only screen and (min-width: 48em) and (max-width: 80em) {
+    .share, .support {
+        display: none;
+    }
+
+    .show-panel {
+        margin: 0 auto;
+    }
+
+}
+
+@media only screen and (max-width: 48em) {
+    body {
+        background: none;
+    }
+
+    .share, .support {
+        display: none;
+    }
+
+    .prev, .next {
+        display: none;
+    }
+
+    .container {
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .show-panel {
+        width: 100%;
+    }
+
+    .shell-top, .shell-bottom, .pone-status-bar {
+        display: none;
+    }
+
+    .play-viewport {
+        height: 100%;
+    }
+
+    .pone {
+        width: 320px;
+    }
+
+    .main {
+        box-sizing: border-box;
+        width: 100%;
+        position: relative;
+        top: 0;
+        /*height: 100%;*/
+        border: none;
+    }
+    .pone-title-bar{
+        display: none;
+    }
+
+}

@@ -1,0 +1,7 @@
+1.让背景不随着页面的缩放而改变
+     background-size: cover;
+        -webkit-background-size: cover;/* 兼容Webkit内核浏览器如Chrome和Safari */
+        -o-background-size: cover;/* 兼容Opera */
+        zoom: 1;
+
+
